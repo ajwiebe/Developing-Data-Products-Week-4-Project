@@ -1,0 +1,36 @@
+---
+title: "Developing Data Products Final Presentation"
+output: ioslides_presentation
+date: July 24th, 2020
+---
+## Description 
+- Takes a mean and a standard deviation 
+- Generates random normals based 
+- Plots them in a histogram 
+- Overalys a normal curve 
+
+## Applications 
+- Can be used to teach indroductary statistics
+- Shows how normal data changes with parameters
+- Shows difference between skewed and normal data
+``` {r message = F, warning = F, echo = F}
+par(mfrow = c(1,2))
+hist(rbeta(1000, 2, 7), xlab = "Randomly Generated Skewed Data", ylab = "Frequency", col = "pink")
+hist(rnorm(1000, 0.4, 1), xlab = "Randomly Generated Normal Data", ylab = "Frequency", col = "red")
+```
+
+## Benefits
+- Can be accessed globally 
+- Relatively intuitive
+- Intuition removes language barrier
+
+## Look at this cool interactive graph of random normals
+``` {r warning = F, message = F, echo = F}
+library(plotly)
+dat <- cbind(rnorm(1000, 0, 1), rnorm(1000, 10, 1), rnorm(1000, 25, 1))
+dat <- as.data.frame(dat)
+colnames(dat) <- c("x", "y", "z")
+plt <- plot_ly(data = dat, x = ~x, y = ~y, z = ~z, mode = "markers", alpha = 0.5, color = ~x)
+plt %>% add_markers() 
+plt
+```
