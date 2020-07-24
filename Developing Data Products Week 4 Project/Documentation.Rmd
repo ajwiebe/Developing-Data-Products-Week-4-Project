@@ -1,0 +1,7 @@
+---
+title: "Documentation for Shiny Application"
+output: html_document
+---
+##Author: Alex Wiebe
+##Date: July 24th, 2020 
+This application take a mean and a standard deviation (sd) and simulates a histogram of 100,000 random normals with those perameters. It also overlays a normal bell curve to the distribution. This application would be most useful for an introductory statistics course and was created for that purpose. It does not require any outside packages to be loaded, and can be used with just the base R system. 
